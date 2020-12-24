@@ -9,7 +9,7 @@
 import PxHeader from "@/components/PxHeader";
 export default {
   name: "App",
-  components: { PxHeader },
+  components: { PxHeader }
 };
 </script>
 
@@ -20,6 +20,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10px;
+  padding: 10px;
 }
 </style>
