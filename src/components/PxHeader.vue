@@ -1,54 +1,82 @@
 <template>
-  <div class="header">
-    <div class="header-logo">
-      <img :src="logo" alt="" />
-    </div>
-    <div class="header-menu">
-      <ul>
-        <li v-for="item in menuItem" :key="item"><a :href="item.path">{{ item.text }}</a></li>
+  <header>
+    <nav class="menu">
+      <ul class="menu__list">
+        <li class="menu__list__element">
+          <img
+            class="image"
+            src="@/assets/icons/poke-icon.png"
+            alt="Poke-Logo"
+          />
+        </li>
+
+        <li class="menu__list__element">
+          <a class="link" href="#">Poke</a>
+        </li>
+
+        <li class="menu__list__element">
+          <a class="link" href="#">About</a>
+        </li>
+
+        <li class="menu__list__element">
+          <a class="link" href="#">Help Us</a>
+        </li>
       </ul>
-    </div>
-    <div class="header-login">
-      <div class="login-newUser" v-if="!logIn">
-        <p>Log In</p>
-        <p>Log Up</p>
-      </div>
-      <div class="login-user" v-else>Bievenido {{ user }}</div>
-    </div>
-  </div>
+    </nav>
+  </header>
 </template>
 
 <script>
 export default {
   name: "header-component",
-  data() {
-    return {
-      logo:
-        "https://i0.wp.com/thegameofnerds.com/wp-content/uploads/2019/12/pokemon-logo-png-pokemon-logo-png-2000.png?fit=2000%2C736&ssl=1",
-      menuItem: [{
-        text:"HOME",
-        path:"/home"
-      },
-      {
-        text:"CARDS",
-        path:"/cards"
-      },
-      {
-        text:"SHOP",
-        path:"/shop"
-      },
-      {
-        text:"ABOUT US",
-        path:"/about"
-      }],
-      logIn: true,
-      user: "Bimeken"
-    };
-  }
 };
 </script>
 
-<style>
-@import url("../normalize.css");
-@import url("../principal.css");
+<style lang="scss" scoped>
+.menu {
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    grid-column-gap: 1rem;
+    align-items: center;
+
+    &__element {
+      padding: 0.5rem 0rem;
+      list-style: none;
+
+      .link,
+      .image {
+        cursor: pointer;
+      }
+
+      .link {
+        font-weight: bold;
+        text-decoration: none;
+        color: #272727;
+      }
+
+      .link:hover {
+        color: #ff6347;
+      }
+
+      .image {
+        width: 2.5rem;
+      }
+    }
+
+    &__element:last-child:hover {
+      border: 1px solid #ff6347;
+    }
+
+    &__element:last-child {
+      padding: 0.5rem;
+      margin-right: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #272727;
+    }
+    &__element:first-child {
+      padding-left: 1rem;
+    }
+  }
+}
 </style>
