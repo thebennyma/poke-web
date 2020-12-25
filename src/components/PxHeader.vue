@@ -66,7 +66,7 @@ export default {
 
     &__element:last-child:hover {
       border: 1px solid #ff6347;
-
+      cursor: pointer;
       a {
         color: #ff6347;
       }

@@ -20,7 +20,7 @@ export default {
   &__image {
     display: grid;
     grid-row-gap: 2rem;
-    padding: 2rem 0rem;
+    padding: 2rem 0rem 0rem 0rem;
     img {
       justify-self: center;
       opacity: 0.1;
