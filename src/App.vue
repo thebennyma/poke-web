@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <px-header></px-header>
-    <router-view></router-view>
-    <px-footer></px-footer>
+  <div class="app">
+    <px-header class="app__header"></px-header>
+    <router-view class="app__body"></router-view>
+    <px-footer class="app__footer"></px-footer>
   </div>
 </template>
 
@@ -16,6 +16,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import url("styles/normalize.css");
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
 </style>

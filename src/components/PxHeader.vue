@@ -3,11 +3,13 @@
     <nav class="menu">
       <ul class="menu__list">
         <li class="menu__list__element">
-          <img
-            class="image"
-            src="@/assets/icons/poke-icon.png"
-            alt="Poke-Logo"
-          />
+          <a href="" @click="goToHome()">
+            <img
+              class="image"
+              src="@/assets/icons/poke-icon.png"
+              alt="Poke-Logo"
+            />
+          </a>
         </li>
 
         <li class="menu__list__element">
@@ -18,8 +20,8 @@
           <a class="link" href="#">About</a>
         </li>
 
-        <li class="menu__list__element">
-          <a class="link" href="#">Help Us</a>
+        <li class="menu__list__element" @click="goToHelpUs()">
+          <a class="link" href="">Help Us</a>
         </li>
       </ul>
     </nav>
@@ -29,6 +31,14 @@
 <script>
 export default {
   name: "header-component",
+  methods: {
+    goToHelpUs() {
+      this.$router.push({ name: "help-us" });
+    },
+    goToHome() {
+      this.$router.push({ name: "home" });
+    },
+  },
 };
 </script>
 
@@ -65,7 +75,7 @@ export default {
     }
 
     &__element:last-child:hover {
-      border: 1px solid #ff6347;
+      background: #272727;
       cursor: pointer;
       a {
         color: #ff6347;

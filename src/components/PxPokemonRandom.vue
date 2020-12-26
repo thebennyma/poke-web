@@ -25,13 +25,11 @@ export default {
   },
   created() {
     this.randomPokemons();
-    setTimeout(() => {
-      for (const i in this.ramdomPoke) {
-        api.getPokemon(`${this.ramdomPoke[i]}`).then((poke) => {
-          this.pokemons.push(poke);
-        });
-      }
-    }, 100);
+    for (const i in this.ramdomPoke) {
+      api.getPokemon(`${this.ramdomPoke[i]}`).then((poke) => {
+        this.pokemons.push(poke);
+      });
+    }
   },
   methods: {
     randomPokemons() {

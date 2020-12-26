@@ -2,11 +2,10 @@
   <footer>
     <div class="footer">
       <div class="footer__links">
-        <a href="#"><img src="@/assets/icons/github-icon.svg" alt="github"/></a>
-        <a href="#"
-          ><img src="@/assets/icons/twitter-icon.svg" alt="twitter"
+        <a href="" @click.prevent="goToGitHub()"
+          ><img src="@/assets/icons/github-icon.svg" alt="github"
         /></a>
-        <a href="#"
+        <a href="" @click="goToHelpUs()"
           ><img src="@/assets/icons/help-us-icon.svg" alt="help us"
         /></a>
       </div>
@@ -23,6 +22,14 @@
 <script>
 export default {
   name: "footer-page",
+  methods: {
+    goToGitHub() {
+      window.open("https://github.com/thebennyma/poke-web", "_blank");
+    },
+    goToHelpUs() {
+      this.$router.push({ name: "help-us" });
+    },
+  },
 };
 </script>
 
@@ -37,7 +44,7 @@ export default {
   font-size: 1rem;
   &__links {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     width: max-content;
     grid-column-gap: 1rem;
     justify-self: center;
