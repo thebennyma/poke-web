@@ -57,7 +57,6 @@ export default {
                 "dragon" : "#3bffc4",
                 "ice" : "#01669f"
             }
-            console.log(colorByType[this.types[0]]);
             if (this.colors.length == 1){
                 return {
                     "background": "linear-gradient(to right, " + colorByType[this.colors[0]] + ", #DDD)"
