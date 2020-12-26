@@ -2,9 +2,9 @@ import Vue from "vue";
 import Router from "vue-router";
 
 import Home from "@/views/Home";
-import Error from "@/views/Error";
 import About from "@/views/About";
-import Poke from "@/views/Poke";
+import HelpUs from "@/views/HelpUs";
+import Error from "@/views/Error";
 
 Vue.use(Router);
 
@@ -19,17 +19,17 @@ export default new Router({
     },
     {
       path: "/about",
-      name: "About",
+      name: "about",
       component: About
     },
     {
-      path: "/poke",
-      name: "Poke",
-      component: Poke
+      path: "/help-us",
+      name: "help-us",
+      component: HelpUs
     },
     {
       path: "*",
-      name: "Error",
+      name: "error",
       component: Error
     }
   ]

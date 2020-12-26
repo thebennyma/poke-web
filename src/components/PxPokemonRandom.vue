@@ -1,35 +1,19 @@
 <template>
   <div class="poke-random">
-    <Card class="poke-random__select"
+    <Card
+      class="poke-random__select"
       v-for="(poke, index) in pokemons"
-      v-bind:pokemon="poke"
-      v-bind:types="typos(poke.types)"
+      :pokemon="poke"
+      :types="typos(poke.types)"
       :key="index"
-      >
-
+    >
     </Card>
-    <!--
-      <img :src="poke.sprites.front_default" alt=""> 
-      <span>Name: {{ poke.name }}</span>
-      <span>Height: {{ poke.height }}</span>
-      <span>Weight: {{ poke.weight }}</span>
-      <span>Base Experience: {{ poke.base_experience }}</span>
-
-      THIS WILL BE IN CARD FORMAT -->
-      <!--
-      <div>
-        <span>Types: </span>
-        <div v-for="(type, ind) in poke.types" :key="ind">
-          {{ type.type.name }}
-        </div>
-      </div>
-      -->
   </div>
 </template>
 
 <script>
 import api from "@/api";
-import Card from "@/components/PxPokemonCard.vue"
+import Card from "@/components/PxPokemonCard.vue";
 
 export default {
   name: "poke-random",
@@ -41,43 +25,57 @@ export default {
   },
   created() {
     this.randomPokemons();
-    setTimeout(() => {
-      for (const i in this.ramdomPoke) {
-        api.getPokemon(`${this.ramdomPoke[i]}`).then((poke) => {
-          this.pokemons.push(poke);
-        });
-      }
-    }, 100);
+    for (const i in this.ramdomPoke) {
+      api.getPokemon(`${this.ramdomPoke[i]}`).then((poke) => {
+        this.pokemons.push(poke);
+      });
+    }
   },
   methods: {
     randomPokemons() {
-      for (let randomPoke = 1; randomPoke <= 5; randomPoke++) {
-        this.ramdomPoke.push(Math.floor(Math.random() * 240));
+      for (let randomPoke = 1; randomPoke <= 8; randomPoke++) {
+        this.ramdomPoke.push(Math.floor(Math.random() * 800));
       }
     },
     typos(types) {
       var type = [];
-      
-      for(let i = 0; i < types.length; i++){
-        type.push(types[i].type.name)
+
+      for (let i = 0; i < types.length; i++) {
+        type.push(types[i].type.name);
       }
       return type;
-    }
+    },
   },
   components: {
-    Card
-  }
+    Card,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .poke-random {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
+  padding: 2rem 1rem;
+  background: rgb(36, 40, 47);
+
+  @media screen and (max-width: 1500px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 1400px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 
   &__select {
     display: grid;
+    background: rgb(36, 40, 47);
   }
 }
 </style>
