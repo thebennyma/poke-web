@@ -5,9 +5,11 @@
     </div>
     <div class="card__data">
       <div class="card__data__poke">
-        <a class="name">{{ pokemon.name | capitalize }}</a>
+        <a class="name" @click="goToPokeInformation(pokemon.name)">{{
+          pokemon.name | capitalize
+        }}</a>
         <div class="id">
-          <small class="circle"></small>
+          <small class="id__circle"></small>
           <p>Active - {{ pokemon.id }}</p>
         </div>
       </div>
@@ -100,7 +102,11 @@ export default {
       return this.pokemon.abilities.length == 1 ? "Abilitie" : "Abilities";
     },
   },
-  methods: {},
+  methods: {
+    goToPokeInformation(pokemon) {
+      this.$router.push({ name: "poke-information", params: { pokemon } });
+    },
+  },
 };
 </script>
 
@@ -137,6 +143,20 @@ export default {
         color: #ff6347;
         cursor: pointer;
       }
+
+      .id {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-column-gap: 0.3rem;
+
+        &__circle {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #5cb85c;
+          align-self: center;
+        }
+      }
     }
 
     &__types {
@@ -166,13 +186,6 @@ export default {
         display: grid;
       }
     }
-  }
-
-  .circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: #5cb85c;
   }
 }
 </style>
