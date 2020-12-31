@@ -9,14 +9,14 @@ export default {
   name: "poke-informarion",
   data() {
     return {
-      pokemonId: null,
+      pokemonId: null
     };
   },
   created() {
-    api.getPokemon(this.$route.params.pokemon).then((poke) => {
+    api.getPokemon(this.$route.params.pokemon).then(poke => {
       console.log(poke);
     });
-  },
+  }
 };
 </script>
 

@@ -28,8 +28,8 @@ export default {
     },
     goToHelpUs() {
       this.$router.push({ name: "help-us" });
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -25,8 +25,8 @@ export default {
   methods: {
     message() {
       alert("Coming Soon");
-    },
-  },
+    }
+  }
 };
 </script>
 

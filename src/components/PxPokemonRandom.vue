@@ -20,13 +20,13 @@ export default {
   data() {
     return {
       pokemons: [],
-      ramdomPoke: [],
+      ramdomPoke: []
     };
   },
   created() {
     this.randomPokemons();
     for (const i in this.ramdomPoke) {
-      api.getPokemon(`${this.ramdomPoke[i]}`).then((poke) => {
+      api.getPokemon(`${this.ramdomPoke[i]}`).then(poke => {
         this.pokemons.push(poke);
       });
     }
@@ -44,11 +44,11 @@ export default {
         type.push(types[i].type.name);
       }
       return type;
-    },
+    }
   },
   components: {
-    Card,
-  },
+    Card
+  }
 };
 </script>
 

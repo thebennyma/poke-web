@@ -3,6 +3,7 @@ import Router from "vue-router";
 
 import Home from "@/views/Home";
 import About from "@/views/About";
+import Poke from "@/views/Poke";
 import HelpUs from "@/views/HelpUs";
 import PokeInformation from "@/views/PokeInformation";
 import Error from "@/views/Error";
@@ -22,6 +23,11 @@ export default new Router({
       path: "/about",
       name: "about",
       component: About
+    },
+    {
+      path: "/poke",
+      name: "poke",
+      component: Poke
     },
     {
       path: "/help-us",

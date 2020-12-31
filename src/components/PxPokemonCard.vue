@@ -48,11 +48,11 @@ export default {
   name: "card-template",
   props: {
     pokemon: Object,
-    types: Array,
+    types: Array
   },
   data() {
     return {
-      colors: this.types,
+      colors: this.types
     };
   },
   computed: {
@@ -74,7 +74,7 @@ export default {
         fairy: "#ff00d4",
         normal: "#b8b8b8",
         dragon: "#3bffc4",
-        ice: "#01669f",
+        ice: "#01669f"
       };
       if (this.colors.length == 1) {
         return {
@@ -82,7 +82,7 @@ export default {
             "linear-gradient(" +
             colorByType[this.colors[0]] +
             "," +
-            colorByType[this.colors[0]],
+            colorByType[this.colors[0]]
         };
       } else {
         return {
@@ -91,7 +91,7 @@ export default {
             colorByType[this.colors[0]] +
             "," +
             colorByType[this.colors[1]] +
-            ")",
+            ")"
         };
       }
     },
@@ -100,13 +100,13 @@ export default {
     },
     ability() {
       return this.pokemon.abilities.length == 1 ? "Abilitie" : "Abilities";
-    },
+    }
   },
   methods: {
     goToPokeInformation(pokemon) {
       this.$router.push({ name: "poke-information", params: { pokemon } });
-    },
-  },
+    }
+  }
 };
 </script>
 

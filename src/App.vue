@@ -12,7 +12,7 @@ import PxFooter from "@/components/PxFooter";
 
 export default {
   name: "App",
-  components: { PxHeader, PxFooter },
+  components: { PxHeader, PxFooter }
 };
 </script>
 

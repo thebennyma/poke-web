@@ -12,7 +12,7 @@
           </a>
         </li>
 
-        <li class="menu__list__element">
+        <li class="menu__list__element" @click="goToPoke()">
           <a class="link" href="#">Poke</a>
         </li>
 
@@ -38,7 +38,10 @@ export default {
     goToHome() {
       this.$router.push({ name: "home" });
     },
-  },
+    goToPoke() {
+      this.$router.push({ name: "poke" });
+    }
+  }
 };
 </script>
 

@@ -11,7 +11,7 @@
 import PxPokemonRandom from "@/components/PxPokemonRandom";
 export default {
   name: "home",
-  components: { PxPokemonRandom },
+  components: { PxPokemonRandom }
 };
 </script>
 
