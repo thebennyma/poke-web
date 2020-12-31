@@ -87,7 +87,7 @@ export default {
       } else {
         return {
           background:
-            "linear-gradient(" +
+            "linear-gradient(-45deg," +
             colorByType[this.colors[0]] +
             "," +
             colorByType[this.colors[1]] +
@@ -187,5 +187,13 @@ export default {
       }
     }
   }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #5cb85c;
+  }
+
 }
 </style>

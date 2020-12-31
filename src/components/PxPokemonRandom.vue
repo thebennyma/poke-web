@@ -34,7 +34,7 @@ export default {
   methods: {
     randomPokemons() {
       for (let randomPoke = 1; randomPoke <= 8; randomPoke++) {
-        this.ramdomPoke.push(Math.floor(Math.random() * 800));
+        this.ramdomPoke.push(Math.floor(Math.random() * 899));
       }
     },
     typos(types) {

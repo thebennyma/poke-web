@@ -40,8 +40,8 @@ export default {
     },
     goToPoke() {
       this.$router.push({ name: "poke" });
-    }
-  }
+    },
+  },
 };
 </script>
 
